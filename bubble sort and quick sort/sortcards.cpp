@@ -33,16 +33,16 @@ string printPack(string mess) {                 // function to return the whole 
 int compareCards(aCard c1, aCard c2) {      // function to compare 2 cards and output a value
     compareCount++;                         // tracks how many compares happen
     if (c1.cardSuit == c2.cardSuit) {       // checks suit first as they are the more important 
-        if (c1.cardVal < c2.cardVal)        // if suits are the same checks values and returns -1/0/1 depending c1 and c2
-            return -1;
-        else if (c1.cardVal == c2.cardVal)
+        if (c1.cardVal < c2.cardVal)        // if suits are the same it checks values and returns -1/0/1 depending on the values of c1 and c2
+            return -1;                      // if value of c1 is less than c2, return -1
+        else if (c1.cardVal == c2.cardVal)  // if value of c1 is equal to c2, return 0
             return 0;
-        else if (c1.cardVal > c2.cardVal)
+        else if (c1.cardVal > c2.cardVal)   // if value of c1 is more than c2, return 1
             return 1;
-    }
-    else if (c1.cardSuit < c2.cardSuit)     // if suits are different and returns -1 or 1 depending on suit of c1 and c2
+    }                                       // if suits are different it checks suits and returns -1 or 1 depending on suit of c1 and c2
+    else if (c1.cardSuit < c2.cardSuit)     // if suit of c1 is less than c2, return -1
             return -1;
-    else if (c1.cardSuit > c2.cardSuit)
+    else if (c1.cardSuit > c2.cardSuit)     // if suit of c1 is more than c2, return 1
             return 1;
 }
 
@@ -74,7 +74,7 @@ void quickSort(int lndx, int hndx, int depth) { // function to quick sort deck o
         while (compareCards(thePack[j], pivot) == 1) {  // loop to see if pivot is equal j value in thePack, minusing from to j till this happens
             j--;
         }
-        if (i <= j) {                                   // if i is less than or equal to j add 1 to i and j
+        if (i <= j) {                                   // if i is less than or equal to j add one to i and j
             if (i < j) {                                // also if i is only less than j swap i and j values
                 swapCards(i, j);                        
             }
@@ -116,3 +116,6 @@ int main() {
     cout << printPack("Quicksort Sorted") << "\ncomparisons: " << compareCount << "\nswaps: " << swapCount << "\nDepth of recursion = " << depthofrecursion << "\n";
                                             // outputs the sorted deck along with the comparisons, swaps and depth of recursion
 }
+
+
+
