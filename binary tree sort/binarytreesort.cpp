@@ -39,7 +39,7 @@ struct treeNode {
 
 treeNode* treeTop;                  // pointer to top of tree
 
-treeNode* newNode(aCard c) {        // create a new node with data s, return pointer to it
+treeNode* newNode(aCard c) {        // create a new node with data c, return pointer to it
     treeNode* p = new treeNode;     // create space for node
     p->data = c;                    // add data
     p->less = NULL;                 // pointers less and more are set to NULL
